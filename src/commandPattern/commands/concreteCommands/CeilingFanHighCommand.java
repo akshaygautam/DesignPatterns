@@ -1,19 +1,35 @@
 package commandPattern.commands.concreteCommands;
 
+import commandPattern.CommandTargets.CeilingFan;
 import commandPattern.commands.Command;
 
 public class CeilingFanHighCommand implements Command {
+	private CeilingFan ceilingFan;
+	private int prevSpeed;
+
+	public CeilingFanHighCommand(CeilingFan ceilingFan) {
+		this.ceilingFan = ceilingFan;
+	}
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-
+		prevSpeed = this.ceilingFan.getSpeed();
+		this.ceilingFan.high();
 	}
 
 	@Override
 	public void undo() {
-		// TODO Auto-generated method stub
+		if (prevSpeed == CeilingFan.HIGH)
+			this.ceilingFan.high();
 
+		if (prevSpeed == CeilingFan.MEDIUM)
+			this.ceilingFan.medium();
+
+		if (prevSpeed == CeilingFan.LOW)
+			this.ceilingFan.low();
+
+		if (prevSpeed == CeilingFan.OFF)
+			this.ceilingFan.off();
 	}
 
 }

@@ -3,18 +3,19 @@ package commandPattern.commands.concreteCommands;
 import commandPattern.CommandTargets.CeilingFan;
 import commandPattern.commands.Command;
 
-public class CeilingFanMediumCommand implements Command {
+public class CeilingFanLowCommand implements Command {
+
 	private CeilingFan ceilingFan;
 	private int prevSpeed;
 
-	public CeilingFanMediumCommand(CeilingFan ceilingFan) {
+	public CeilingFanLowCommand(CeilingFan ceilingFan) {
 		this.ceilingFan = ceilingFan;
 	}
 
 	@Override
 	public void execute() {
 		prevSpeed = this.ceilingFan.getSpeed();
-		this.ceilingFan.medium();
+		this.ceilingFan.low();
 	}
 
 	@Override
@@ -31,5 +32,4 @@ public class CeilingFanMediumCommand implements Command {
 		if (prevSpeed == CeilingFan.OFF)
 			this.ceilingFan.off();
 	}
-
 }
