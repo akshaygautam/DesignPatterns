@@ -1,4 +1,4 @@
-package adapter.adaptee;
+package adapterPattern.adaptee;
 
 public class WildTurkey implements Turkey {
 

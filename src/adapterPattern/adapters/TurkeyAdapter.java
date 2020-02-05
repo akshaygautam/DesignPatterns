@@ -1,6 +1,6 @@
-package adapter.realAdapter;
+package adapterPattern.adapters;
 
-import adapter.adaptee.Turkey;
+import adapterPattern.adaptee.Turkey;
 import strategyPattern.Duck;
 
 /**

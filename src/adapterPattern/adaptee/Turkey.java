@@ -1,4 +1,4 @@
-package adapter.adaptee;
+package adapterPattern.adaptee;
 
 public interface Turkey {
 	public void gobble();

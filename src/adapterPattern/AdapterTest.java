@@ -1,9 +1,9 @@
-package adapter;
+package adapterPattern;
 
-import adapter.adaptee.Turkey;
-import adapter.adaptee.WildTurkey;
-import adapter.realAdapter.DuckAdapter;
-import adapter.realAdapter.TurkeyAdapter;
+import adapterPattern.adaptee.Turkey;
+import adapterPattern.adaptee.WildTurkey;
+import adapterPattern.adapters.DuckAdapter;
+import adapterPattern.adapters.TurkeyAdapter;
 import strategyPattern.Duck;
 import strategyPattern.concreteDucks.MallardDuck;
 
