@@ -6,7 +6,7 @@
 	- Principle of least knowledge/ Law of demeter : talk only to your immediate friends.
 > It means when you are designing a system, for any object, be careful of the number of classes it interacts with and also how it comes to interact with those classes
 ## Guide lines to follow 
-###The principle tells how we should invoke methods that belongs to:
+### The principle tells how we should invoke methods that belongs to:
 - The object itself.
 - Object passed as an parameter to the method.
 - Any object that method creates.
