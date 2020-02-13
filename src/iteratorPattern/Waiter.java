@@ -2,6 +2,7 @@ package iteratorPattern;
 
 import java.util.ArrayList;
 
+import iteratorPattern.differentCollections.CafeMenu;
 import iteratorPattern.differentCollections.DinerMenu;
 import iteratorPattern.differentCollections.MenuItem;
 import iteratorPattern.differentCollections.PancakeHouseMenu;
@@ -10,10 +11,12 @@ import iteratorPattern.iterator.Iterator;
 public class Waiter {
 	private PancakeHouseMenu pancakeHouseMenu;
 	private DinerMenu dinerMenu;
+	private CafeMenu cafeMenu;
 
-	public Waiter(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
+	public Waiter(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu, CafeMenu cafeMenu) {
 		this.dinerMenu = dinerMenu;
 		this.pancakeHouseMenu = pancakeHouseMenu;
+		this.cafeMenu = cafeMenu;
 	}
 	
 	public void printMenu() {
@@ -37,13 +40,20 @@ public class Waiter {
 	}
 	
 	public void printMenuWithIterator() {
-		Iterator panIterator = this.pancakeHouseMenu.getIterator();
-		Iterator dinIterator = this.dinerMenu.getIterator();
+		/*
+		 * Cool now we can utilize same method to iterate different collections
+		 */
+		java.util.Iterator<MenuItem> panIterator = this.pancakeHouseMenu.getIterator();
+		java.util.Iterator<MenuItem> dinIterator = this.dinerMenu.getIterator();
+		java.util.Iterator<MenuItem> cafeIterator = this.cafeMenu.getIterator();
+		
+		// But this multiple call is also a pain to my eyes, Look for composite pattern for solution
 		printMenu(panIterator);
 		printMenu(dinIterator);
+		printMenu(cafeIterator);
 	}
 
-	private void printMenu(Iterator iterator) {
+	private void printMenu(java.util.Iterator<MenuItem> iterator) {
 		while(iterator.hasNext()) {
 			MenuItem item = iterator.next();
 			System.out.print(item.getName());
