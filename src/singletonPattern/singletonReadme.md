@@ -1,5 +1,5 @@
 # Singleton Pattern
-##Ensure a class only has one instance and provide a global point of access to it.
+## Ensure a class only has one instance and provide a global point of access to it.
 
 - The singleton pattern ensures you have at most one instance of a class in your application.
 - The singleton also provides global access point to that instance.
