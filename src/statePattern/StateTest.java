@@ -12,7 +12,7 @@ public class StateTest {
 	public static void main(String[] args) throws RemoteException {
 		GumballMachine gumballMachine = new GumballMachine(5, "Noida");
 		try {
-			Naming.bind("NoidaGumball", gumballMachine);
+			Naming.bind("//localhost/noida", new GumballMachine(5, "Noida"));
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
