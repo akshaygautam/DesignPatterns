@@ -1,10 +1,14 @@
 # Design patterns.
 ## Refering Head first design pattern.
 ### The golden rules of using pattern:
-    > Center your thinking on design, not on patterns. Use patterns when there is a natural need for them. If something simpler will work, then use it.
-    > Pattern are a tool, and a tool should only be used when needed. Always start from principles and create the simplest code you can that does the job.
-    > Introduce a pattern when you're sure it is necessary to solve a problem in your design, or when you are quiet sure that it is needed to deal with a future change in the reuirements of your application.
-    > Patterns can introduce complexity,  and we never want complexity where it is not needed. But patterns are powerful when used when they're needed.
+    > Center your thinking on design, not on patterns. Use patterns when there is a natural need for them. 
+    If something simpler will work, then use it.
+    > Pattern are a tool, and a tool should only be used when needed. 
+    Always start from principles and create the simplest code you can that does the job.
+    > Introduce a pattern when you're sure it is necessary to solve a problem in your design, 
+    or when you are quiet sure that it is needed to deal with a future change in the reuirements of your application.
+    > Patterns can introduce complexity,  and we never want complexity where it is not needed. 
+    But patterns are powerful when used when they're needed.
 ### Follow along sequence
  - Strategy pattern
  - Observer pattern
