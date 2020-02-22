@@ -4,7 +4,8 @@ import statePattern.withStatePattern.GumballMachine;
 
 public class NoQuarterState implements State {
 
-	private GumballMachine gumballMachine;
+	private static final long serialVersionUID = 2L;
+	transient private GumballMachine gumballMachine;
 	
 	public NoQuarterState(GumballMachine gumballMachine) {
 		this.gumballMachine = gumballMachine;
@@ -29,6 +30,11 @@ public class NoQuarterState implements State {
 	@Override
 	public void dispense() {
 		System.out.println("You need to pay first");
+	}
+	
+	@Override
+	public String toString() {
+		return "NoQuarterState";
 	}
 
 }

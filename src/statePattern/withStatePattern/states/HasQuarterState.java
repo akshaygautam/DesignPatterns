@@ -5,8 +5,10 @@ import java.util.Random;
 import statePattern.withStatePattern.GumballMachine;
 
 public class HasQuarterState implements State {
+	
+	private static final long serialVersionUID = 2L;
 	private Random randomWinner = new Random(System.currentTimeMillis());
-	private GumballMachine gumballMachine;
+	transient private GumballMachine gumballMachine;
 	
 	public HasQuarterState(GumballMachine gumballMachine) {
 		this.gumballMachine = gumballMachine;
@@ -39,4 +41,9 @@ public class HasQuarterState implements State {
 		System.out.println("No gumball dispensed");
 	}
 
+	@Override
+	public String toString() {
+		return "HasQuarterState";
+	}
+	
 }

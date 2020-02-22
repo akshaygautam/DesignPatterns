@@ -4,7 +4,8 @@ import statePattern.withStatePattern.GumballMachine;
 
 public class SoldState implements State {
 
-	private GumballMachine gumballMachine;
+	private static final long serialVersionUID = 2L;
+	transient private GumballMachine gumballMachine;
 	
 	public SoldState(GumballMachine gumballMachine) {
 		this.gumballMachine = gumballMachine;
@@ -34,6 +35,11 @@ public class SoldState implements State {
 			System.out.println("Oops, out of gumballs");
 			gumballMachine.setState(gumballMachine.getSoldOutState());
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return "SoldState";
 	}
 
 }

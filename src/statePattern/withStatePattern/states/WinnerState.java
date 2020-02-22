@@ -4,8 +4,9 @@ import statePattern.withStatePattern.GumballMachine;
 
 public class WinnerState implements State {
 
-	private GumballMachine gumballMachine;
-
+	private static final long serialVersionUID = 2L;
+	transient private GumballMachine gumballMachine;
+	
 	public WinnerState(GumballMachine gumballMachine) {
 		this.gumballMachine = gumballMachine;
 	}
@@ -43,4 +44,8 @@ public class WinnerState implements State {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "WinnerState";
+	}
 }

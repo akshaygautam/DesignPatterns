@@ -1,11 +1,25 @@
 package statePattern;
 
+import java.net.MalformedURLException;
+import java.rmi.AlreadyBoundException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+
 import statePattern.withStatePattern.GumballMachine;
 
 public class StateTest {
 
-	public static void main(String[] args) {
-		GumballMachine gumballMachine = new GumballMachine(5);
+	public static void main(String[] args) throws RemoteException {
+		GumballMachine gumballMachine = new GumballMachine(5, "Noida");
+		try {
+			Naming.bind("NoidaGumball", gumballMachine);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (AlreadyBoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		System.out.println(gumballMachine);
 		

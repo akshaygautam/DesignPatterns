@@ -1,5 +1,9 @@
 package statePattern.withStatePattern;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+import statePattern.proxy.GumballMachineRemote;
 import statePattern.withStatePattern.states.HasQuarterState;
 import statePattern.withStatePattern.states.NoQuarterState;
 import statePattern.withStatePattern.states.SoldOutState;
@@ -7,8 +11,9 @@ import statePattern.withStatePattern.states.SoldState;
 import statePattern.withStatePattern.states.State;
 import statePattern.withStatePattern.states.WinnerState;
 
-public class GumballMachine {
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote{
 
+	private static final long serialVersionUID = 1L;
 	private State soldOutState;
 	private State noQuarterState;
 	private State hasQuarterState;
@@ -17,8 +22,9 @@ public class GumballMachine {
 
 	private State state = soldOutState;
 	private int count = 0;
+	private final String  location;
 
-	public GumballMachine(int numberOfGumballs) {
+	public GumballMachine(int numberOfGumballs, String location) throws RemoteException{
 		this.count = numberOfGumballs;
 		this.hasQuarterState = new HasQuarterState(this);
 		this.noQuarterState = new NoQuarterState(this);
@@ -30,6 +36,7 @@ public class GumballMachine {
 		}else {
 			state = soldOutState;
 		}
+		this.location = location;
 	}
 	
 	public void insertQuarter() {
@@ -108,9 +115,15 @@ public class GumballMachine {
 		this.winnerState = winnerState;
 	}
 
+
 	@Override
 	public String toString() {
-		return "GumballMachine [state=" + state + ", count=" + count + "]";
+		return "GumballMachine [state=" + state + ", count=" + count + ", location=" + location + "]";
+	}
+
+	@Override
+	public String getLocation() throws RemoteException {
+		return this.location;
 	}
 	
 }
