@@ -1,5 +1,6 @@
-package compoundPattern.multiplePatterns;
+package compoundPattern;
 
+import compoundPattern.multiplePatterns.Quackable;
 import compoundPattern.multiplePatterns.ducks.DuckCall;
 import compoundPattern.multiplePatterns.ducks.Flock;
 import compoundPattern.multiplePatterns.ducks.MallardDuck;
